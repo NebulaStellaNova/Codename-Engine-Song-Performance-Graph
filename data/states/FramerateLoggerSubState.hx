@@ -46,7 +46,7 @@ function postCreate() {
     for (i=>frame in frames) {
         var gradientPos = frame.rate / Options.framerate;
         var color = /* i % 2 == 0 ? FlxColor.WHITE : FlxColor.RED;  */FlxColor.interpolate(FlxColor.RED, FlxColor.GREEN, (gradientPos * 2) - 0.5);
-        var g = new FunkinSprite(i * width, 0).makeGraphic(width, 200 * gradientPos, color);
+        var g = new FunkinSprite(i * width, 0).makeSolid(width, 200 * gradientPos, color);
         g.y = 200 - g.height;
 
         if (frame.isDrop) {
